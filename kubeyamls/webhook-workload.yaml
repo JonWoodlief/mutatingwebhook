@@ -26,10 +26,10 @@ spec:
         env:
           - name: TLS
             value: "true"
-  volumes:
-    - name: tls
-      secret:
-        secretName: webhook-tls
+      volumes:
+        - name: tls
+          secret:
+            secretName: webhook-tls
 ---
 apiVersion: v1
 kind: Service
