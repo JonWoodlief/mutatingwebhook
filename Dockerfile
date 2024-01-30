@@ -3,7 +3,7 @@ FROM golang:latest as builder
 WORKDIR /app
 COPY . .
 RUN go mod tidy
-RUN go build
+RUN GOOS=linux GOARCH=amd64 go build
 
 FROM alpine:latest  
 
