@@ -10,7 +10,7 @@ docker build -t jonwoodlief/webhook:latest .
 
 ## prep cluster
 
-generate webhooktest namespace. label a node with the special label from main.go
+generate webhooktest namespace using webhooktest-ns.yaml. label a node with the special label from main.go
 
 ## generate tls certs
 
