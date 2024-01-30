@@ -27,6 +27,6 @@ kubectl create secret tls -n webhooktest webhook-tls \
 
 echo
 echo ">> MutatingWebhookConfiguration caBundle:"
-cat ca.crt | base64 | fold
+cat ca.crt | base64
 
 rm ca.crt ca.key ca.srl server.crt server.csr server.key
