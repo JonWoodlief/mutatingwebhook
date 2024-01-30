@@ -1,4 +1,1 @@
-*.conf
-*.csr
-*.key
 *secret*
