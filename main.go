@@ -48,7 +48,7 @@ func mutateHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	//log name and namespace of the pod
-	log.Printf("Pod name: %s, namespace: %s", pod.Name, pod.Namespace)
+	log.Printf("Initiating review for pod name: %s, namespace: %s", pod.Name, pod.Namespace)
 
 	// Check if the pod is running under the specified service account
 	if pod.Spec.ServiceAccountName == serviceAccountName {
