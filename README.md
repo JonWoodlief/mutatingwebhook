@@ -4,9 +4,9 @@ This project is a demonstration of how to force pods with a certain service acco
 
 ## Build Docker image
 
-    ```shell
-    docker build -t jonwoodlief/webhook:latest .
-    ```
+```
+docker build -t jonwoodlief/webhook:latest .
+```
 
 ## deploy all resources to k8s
 
