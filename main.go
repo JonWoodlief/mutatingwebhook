@@ -19,7 +19,16 @@ const (
 
 func main() {
 	http.HandleFunc("/mutate", mutateHandler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+
+	if os.Getenv("TLS") == "true" {
+		cert := "/etc/admission-webhook/tls/tls.crt"
+		key := "/etc/admission-webhook/tls/tls.key"
+		log.Print("Listening on port 443...")
+		log.Fatal(http.ListenAndServeTLS(":443", cert, key, nil))
+	} else {
+		log.Print("Listening on port 8080...")
+		log.Fatal(http.ListenAndServe(":8080", nil))
+	}
 }
 
 func mutateHandler(w http.ResponseWriter, r *http.Request) {

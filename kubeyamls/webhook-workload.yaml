@@ -19,7 +19,17 @@ spec:
       - name: webhook
         image: jonwoodlief/webhook:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 443
+        volumeMounts:
+          - name: tls
+            mountPath: "/etc/admission-webhook/tls"
+        env:
+          - name: TLS
+            value: "true"
+  volumes:
+    - name: tls
+      secret:
+        secretName: webhook-tls
 ---
 apiVersion: v1
 kind: Service
@@ -31,5 +41,5 @@ spec:
     app: webhook
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8080
+      port: 443
+      targetPort: 443
