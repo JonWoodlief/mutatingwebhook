@@ -9,7 +9,7 @@ webhooks:
     clientConfig:
       service:
         name: node-selector-injector
-        namespace: default
+        namespace: webhooktest
         path: "/"
       caBundle: "TODO"
     rules:
@@ -25,3 +25,5 @@ webhooks:
     objectSelector:
       matchLabels:
         inject-node-selector: enabled
+    sideEffects: None
+    admissionReviewVersions: ["v1"]
