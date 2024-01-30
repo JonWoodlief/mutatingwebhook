@@ -3,8 +3,9 @@ apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
   name: node-selector-injector
+  namespace: webhooktest
 webhooks:
-  - name: node-selector-injector.default.svc
+  - name: node-selector-injector.webhooktest.svc
     clientConfig:
       service:
         name: node-selector-injector
