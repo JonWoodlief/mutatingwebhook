@@ -14,7 +14,7 @@ generate webhooktest namespace using webhooktest-ns.yaml. label a node with the 
 
 ## generate tls certs
 
-run `./ssl.sh` and copy/paste the CA_BUNDLE outputted into the ca_bundle where it says TODO
+run `./ssl.sh` and copy/paste the CA_BUNDLE outputted into webhook.yaml where it says TODO
 
 ## deploy all resources to k8s
 
