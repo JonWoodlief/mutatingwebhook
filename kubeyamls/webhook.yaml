@@ -10,7 +10,7 @@ webhooks:
       service:
         name: webhook-service
         namespace: webhooktest
-        path: "/"
+        path: "/mutate"
       caBundle: "TODO"
     rules:
     - operations: ["CREATE"]
