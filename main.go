@@ -71,6 +71,7 @@ func mutateHandler(w http.ResponseWriter, r *http.Request) {
 
 			// Update the admission review response with the mutated pod object
 			admissionReview.Response = &v1.AdmissionResponse{
+				UID:     admissionReview.Request.UID,
 				Allowed: true,
 				Patch:   getPatch(&pod),
 				PatchType: func() *v1.PatchType {
