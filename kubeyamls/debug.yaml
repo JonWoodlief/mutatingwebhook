@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: debug
+  name: debug
+  namespace: webhooktest
+spec:
+  containers:
+  - image: registry.access.redhat.com/rhel7/rhel-tools:latest
+    name: debug
+    command: ["sleep"]
+    args: ["99999999999"]
+  restartPolicy: Always

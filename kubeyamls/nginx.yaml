@@ -12,6 +12,7 @@ spec:
     metadata:
       labels:
         app: nginx
+        inject-node-selector: enabled
     spec:
       serviceAccountName: nginx-serviceaccount
       containers:

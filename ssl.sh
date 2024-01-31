@@ -3,11 +3,11 @@
 openssl genrsa -out ca.key 2048
 
 openssl req -new -x509 -days 365 -key ca.key \
-  -subj "/C=AU/CN=webhooktest"\
+  -subj "/C=AU/CN=webhook-service.webhooktest.svc"\
   -out ca.crt
 
 openssl req -newkey rsa:2048 -nodes -keyout server.key \
-  -subj "/C=AU/CN=webhooktest" \
+  -subj "/C=AU/CN=webhook-service.webhooktest.svc" \
   -out server.csr
 
 openssl x509 -req \

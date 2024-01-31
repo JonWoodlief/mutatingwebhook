@@ -5,10 +5,10 @@ metadata:
   name: node-selector-injector
   namespace: webhooktest
 webhooks:
-  - name: node-selector-injector.webhooktest.svc
+  - name: webhook-service.webhooktest.svc
     clientConfig:
       service:
-        name: node-selector-injector
+        name: webhook-service
         namespace: webhooktest
         path: "/"
       caBundle: "TODO"
